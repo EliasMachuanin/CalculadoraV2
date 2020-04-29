@@ -1,0 +1,26 @@
+*{
+    padding : 0px;
+    margin : 0px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+#resultado{
+    color: #000;
+    padding: 20px;
+}
+
+#igual{
+    background-color: #48c;
+}
+
+#botones button{
+    text-align: center;
+    transition: all 0.09s;
+    margin: 2px 0px;
+    font-size: 20px;
+    width: 54px;
+    height: 54px;
+    padding: 9px 15px;
+    color: #fff;
+    border: none;
+}
