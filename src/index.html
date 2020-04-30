@@ -8,8 +8,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="styles.css">
-
     <link rel="shortcut icon" href="calculator_icon-icons.com_72046.ico" type="image/x-icon">
     
     <title>Infinite Calculator</title>
@@ -62,27 +60,28 @@
                 <br>
                       <br>
                       <br>
+                      <Form action = "/" method = "post">
                       <div class="input-group mb-3 col-xs col-sm col-md">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="comandoL">Ingresar Comando:</span>
+                          <Label class="input-group-text" id="comandoL">Ingresar Comando:</Label>
                         </div>
-                        <input type="text" class="form-control" aria-label="Ingresar Comando:" aria-describedby="inputGroup-sizing-default">
-                        <button id="enviar" type="button" class="btn btn-success">Enviar</button>
+                        <Input name="textbox" id="texto" class="form-control" aria-label="Ingresar Comando:" aria-describedby="inputGroup-sizing-default">
+                        <button id="enviar" type="submit" class="btn btn-success">Enviar</button>
                       </div>
+                      </Form>
                       <br>
           </div>
         </center>
           <br>
           <br>
           <p>
-              Creado por: Machuanin, Elias - Aranda, Ranzo.
+              Creado por: Machuanin, Elias - Aranda, Renzo.
           </p>
           <br>
           <br>
       
 
     <!-- Optional JavaScript -->
-    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
