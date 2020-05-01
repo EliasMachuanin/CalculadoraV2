@@ -13,106 +13,64 @@ document.getElementById("r").addEventListener("click", o2);
 document.getElementById("d").addEventListener("click", o3);
 document.getElementById("m").addEventListener("click", o4);
 document.getElementById("borrar").addEventListener("click", o5);
-document.getElementById("igual").addEventListener("click", showResult);
+
 function n1() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n1").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("uno"); 
 }
 function n2() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n2").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("dos"); 
 }
 function n3() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n3").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("tres"); 
 }
 function n4() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n4").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("cuatro"); 
 }
 function n5() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n5").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("cinco"); 
 }
 function n6() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n6").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("seis"); 
 }
 function n7() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n7").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("siete"); 
 }
 function n8() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n8").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("ocho"); 
 }
 function n9() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n9").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("nueve"); 
 }
 function n0() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("n0").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("cero"); 
 }
 function o1() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("s").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("sumar"); 
 }
 function o2() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("r").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("restar"); 
 }
 function o3() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("d").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("dividir"); 
 }
 function o4() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("m").innerHTML;
-    document.getElementById('resultado').innerHTML = actual + sumado;
+    document.getElementById('comandos');
+    comandos.value = comandos.value.concat("multiplicar"); 
 }
 function o5() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var sumado = document.getElementById("borrar").innerHTML;
-    document.getElementById('resultado').innerHTML = "";
-}
-function showResult() {
-    var actual = document.getElementById('resultado').innerHTML;
-    var suma = actual.indexOf("+");
-    var resta = actual.indexOf("-");
-    var div = actual.indexOf("÷");
-    var mult = actual.indexOf("x");
-    if (suma !== -1) {
-        var arr = actual.split("+", 2);
-        var res = parseInt(arr[0]) + parseInt(arr[1]);
-        document.getElementById("resultado").innerHTML = res.toString();
-    }
-    else if (resta !== -1) {
-        var arr = actual.split("-", 2);
-        var res = parseInt(arr[0]) - parseInt(arr[1]);
-        document.getElementById("resultado").innerHTML = res.toString();
-    }
-    else if (div !== -1) {
-        var arr = actual.split("÷", 2);
-        var res = parseInt(arr[0]) / parseInt(arr[1]);
-        document.getElementById("resultado").innerHTML = res.toString();
-    }
-    else if (mult !== -1) {
-        var arr = actual.split("x", 2);
-        var res = parseInt(arr[0]) * parseInt(arr[1]);
-        document.getElementById("resultado").innerHTML = res.toString();
-    }
+    document.getElementById('comandos');
+    comandos.value = ""; 
 }
