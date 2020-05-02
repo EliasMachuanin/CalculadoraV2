@@ -26,7 +26,13 @@ app.post('/',function(req,res){
     var entrada = req.body.textbox;
     let newC = new Contexto(entrada);
     c.procesarNuevoElemento(p.evaluate(newC));
-    res.render('resultado',{salida: c.resultado});
+    if(c.resultado!=null){
+        res.render('resultado',{salida: c.resultado});
+    }
+    else{
+        res.render('resultado',{salida: "SYNTAX ERROR"});
+    }
+    
 });
 
-app.listen(5000, () => console.log('Server running'));
+app.listen(5010, () => console.log('Server running'));
