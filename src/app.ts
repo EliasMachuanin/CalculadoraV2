@@ -9,12 +9,13 @@ var body_parser = require('body-parser');
 
 const app = express();
 
+
 let c = new Calculadora();
 let p = new Parser();
 
 app.use(body_parser.urlencoded({extended:true}));
 
-//app.use('/', express.static('src'));
+app.use('/', express.static('src'));
 
 app.set('view engine','ejs');
 
