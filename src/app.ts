@@ -23,25 +23,24 @@ app.use(body_parser.urlencoded({extended:true}));
 app.use('/', express.static('img'));
 
 app.get('/', function(req, res) {
-    mostrar(res)
+    mostrar(res, true)
   });
 
 app.post('/',function(req,res){
     var entrada = req.body.textbox;
     let newC = new Contexto(entrada);
-    c.procesarNuevoElemento(p.evaluate(newC));
-    mostrar(res)
+    mostrar(res, c.procesarNuevoElemento(p.evaluate(newC)))
 });
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 
 
-function mostrar(res){
-    if(c.resultado!=null&&c.operacion==null){
-        res.render('index', {locals: {salida: c.resultado, salida2: ""}});
-    }
-    else if(c.operacion!=null){
-        if(c.operacion instanceof OperacionSuma){
+function mostrar(res, est : boolean){
+    if(est == true){
+        if(c.operacion == null){
+            res.render('index',{locals:{salida: c.resultado, salida2: ""}});
+        }
+        else if(c.operacion instanceof OperacionSuma){
             res.render('index',{locals:{salida: c.resultado.toString().concat(" +"), salida2: ""}});
         }
         else if(c.operacion instanceof OperacionResta){
@@ -53,10 +52,9 @@ function mostrar(res){
         else if(c.operacion instanceof OperacionDivision){
             res.render('index',{locals:{salida: c.resultado.toString().concat(" /"), salida2: ""}});
         }
-        
     }
     else{
-        res.render('index', {locals: {salida: 0, salida2: "SYNTAX ERROR"}});
+        res.render('index', {locals: {salida: c.resultado, salida2: "Error de sintaxis: NO se puede ingresar un numero sobre un numero."}});
     }
 
 }

@@ -4,7 +4,7 @@ import { ExpresionNumerica } from "./ExpresionNumerica";
 
 
 export class Calculadora {
-    public resultado = null
+    public resultado = 0
     public operando = null
     public operacion = null
 
@@ -13,37 +13,29 @@ export class Calculadora {
 
     public procesarNuevoElemento(a : Contexto){
         if(a.tipo instanceof ExpresionOperacion){
-            if((this.resultado != null)){
-                this.operacion = a.valor
-            }
-            else{
-                this.resultado = null
-                this.operando=null
-                this.operacion = null
-                console.log("Syntax Error") 
-            }
+            this.operacion = a.valor
+            return true
         }
         else if(a.tipo instanceof ExpresionNumerica){
-            if(this.resultado == null){
+            if(this.resultado == 0){
                 this.resultado = a.valor
+                return true
             }
             else if(this.operacion != null){
                 this.operando = a.valor
                 this.realizarOperacion()
+                return true
             }
             else{
-                this.resultado = null
                 this.operando=null
                 this.operacion = null
-                console.log("Syntax Error") 
-                
+                return false;
             }
         }
         else{
-            this.resultado = null
             this.operando=null
             this.operacion = null
-            console.log("Syntax Error")             
+            return false         
         }
     }
 
