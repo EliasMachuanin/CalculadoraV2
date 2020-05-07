@@ -16,6 +16,8 @@ app.set('view engine', 'html');
 var body_parser = require('body-parser');
 let c = new Calculadora();
 let p = new Parser();
+const PORT = process.env.PORT || 3000;
+
 app.use(body_parser.urlencoded({extended:true}));
 
 app.use('/', express.static('img'));
@@ -31,7 +33,8 @@ app.post('/',function(req,res){
     mostrar(res)
 });
 
-app.listen(5011, () => console.log('Server running'));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+
 
 function mostrar(res){
     if(c.resultado!=null&&c.operacion==null){
