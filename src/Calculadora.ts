@@ -13,7 +13,7 @@ export class Calculadora {
 
     public procesarNuevoElemento(a : Contexto){
         if(a.tipo instanceof ExpresionOperacion){
-            if((this.resultado != null)&&(this.operacion == null)){
+            if((this.resultado != null)){
                 this.operacion = a.valor
             }
             else{

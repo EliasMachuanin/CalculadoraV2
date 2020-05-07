@@ -16,7 +16,7 @@ app.set('view engine', 'html');
 var body_parser = require('body-parser');
 let c = new Calculadora();
 let p = new Parser();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(body_parser.urlencoded({extended:true}));
 
@@ -38,25 +38,25 @@ app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 
 function mostrar(res){
     if(c.resultado!=null&&c.operacion==null){
-        res.render('index', {locals: {salida: c.resultado}});
+        res.render('index', {locals: {salida: c.resultado, salida2: ""}});
     }
     else if(c.operacion!=null){
         if(c.operacion instanceof OperacionSuma){
-            res.render('index',{locals:{salida: c.resultado.toString().concat(" +")}});
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" +"), salida2: ""}});
         }
         else if(c.operacion instanceof OperacionResta){
-            res.render('index',{locals:{salida: c.resultado.toString().concat(" -")}});
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" -"), salida2: ""}});
         }
         else if(c.operacion instanceof OperacionProducto){
-            res.render('index',{locals:{salida: c.resultado.toString().concat(" *")}});
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" *"), salida2: ""}});
         }
         else if(c.operacion instanceof OperacionDivision){
-            res.render('index',{locals:{salida: c.resultado.toString().concat(" /")}});
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" /"), salida2: ""}});
         }
         
     }
     else{
-        res.render('index', {locals: {salida: 0}});
+        res.render('index', {locals: {salida: 0, salida2: "SYNTAX ERROR"}});
     }
 
 }
