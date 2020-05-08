@@ -5,12 +5,13 @@ import Contexto from "./Contexto"
 export class ExpresionNumerica extends Expresion {
 
     public interpret(a : Contexto){
-        let aux = "", aux2 = a;
+        let aux = "", aux2 = a, i = 0;
         let error = /o/gi; 
         while((aux2.expresionAdaptada!="")&&(aux.search(error) == -1)){
             aux = aux.concat(this.traducirNumero(aux2))
+            i++;
         }
-        if(aux=="o"){
+        if(aux=="o"||i==0){
             a.valor = null
         }
         else{

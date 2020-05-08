@@ -35,8 +35,8 @@ app.post('/',function(req,res){
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 
 
-function mostrar(res, est : boolean){
-    if(est == true){
+function mostrar(res, est){
+    if(est == 1){
         if(c.operacion == null){
             res.render('index',{locals:{salida: c.resultado, salida2: ""}});
         }
@@ -53,8 +53,10 @@ function mostrar(res, est : boolean){
             res.render('index',{locals:{salida: c.resultado.toString().concat(" /"), salida2: ""}});
         }
     }
-    else{
-        res.render('index', {locals: {salida: c.resultado, salida2: "Error de sintaxis: NO se puede ingresar un numero sobre un numero."}});
+    else if(est == 0){
+        res.render('index', {locals: {salida: c.resultado, salida2: "Syntax Error."}});
     }
-
+    else{
+        res.render('index', {locals: {salida: c.resultado, salida2: "Comando invalido."}});
+    }
 }

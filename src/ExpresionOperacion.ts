@@ -7,10 +7,12 @@ export class ExpresionOperacion extends Expresion {
 
     public interpret(a : Contexto){
         let aux = a, aux2;
-        aux2 = this.traducirOperacion(aux)
-        if(aux2!=null){
-            a.valor = aux2
-            a.tipo = this
+        if(aux.tipo == null){
+            aux2 = this.traducirOperacion(aux)
+            if(aux2!=null){
+                a.valor = aux2
+                a.tipo = this
+            }
         }
     }
 

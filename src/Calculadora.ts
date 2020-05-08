@@ -14,28 +14,28 @@ export class Calculadora {
     public procesarNuevoElemento(a : Contexto){
         if(a.tipo instanceof ExpresionOperacion){
             this.operacion = a.valor
-            return true
+            return 1
         }
         else if(a.tipo instanceof ExpresionNumerica){
             if(this.resultado == 0){
                 this.resultado = a.valor
-                return true
+                return 1
             }
             else if(this.operacion != null){
                 this.operando = a.valor
                 this.realizarOperacion()
-                return true
+                return 1
             }
             else{
                 this.operando=null
                 this.operacion = null
-                return false;
+                return 0;
             }
         }
         else{
             this.operando=null
             this.operacion = null
-            return false         
+            return -1         
         }
     }
 
