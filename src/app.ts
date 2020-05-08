@@ -57,6 +57,21 @@ function mostrar(res, est){
         res.render('index', {locals: {salida: c.resultado, salida2: "Syntax Error."}});
     }
     else{
-        res.render('index', {locals: {salida: c.resultado, salida2: "Comando invalido."}});
+        if(c.operacion == null){
+            res.render('index',{locals:{salida: c.resultado, salida2: "Comando Invalido."}});
+        }
+        else if(c.operacion instanceof OperacionSuma){
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" +"), salida2: "Comando Invalido."}});
+        }
+        else if(c.operacion instanceof OperacionResta){
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" -"), salida2: "Comando Invalido."}});
+        }
+        else if(c.operacion instanceof OperacionProducto){
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" *"), salida2: "Comando Invalido."}});
+        }
+        else if(c.operacion instanceof OperacionDivision){
+            res.render('index',{locals:{salida: c.resultado.toString().concat(" /"), salida2: "Comando Invalido."}});
+        }
     }
 }
+

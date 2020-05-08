@@ -34,7 +34,6 @@ export class Calculadora {
         }
         else{
             this.operando=null
-            this.operacion = null
             return -1         
         }
     }
