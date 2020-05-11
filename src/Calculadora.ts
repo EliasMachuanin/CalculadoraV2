@@ -17,7 +17,7 @@ export class Calculadora {
             return 1
         }
         else if(a.tipo instanceof ExpresionNumerica){
-            if(this.resultado == 0){
+            if(this.resultado == 0 && this.operacion == null){
                 this.resultado = a.valor
                 return 1
             }
